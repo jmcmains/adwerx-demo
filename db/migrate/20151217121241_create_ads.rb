@@ -10,6 +10,10 @@ class CreateAds < ActiveRecord::Migration
       t.string :text_1
       t.string :text_2
       t.integer :design
+      t.string :background_color_1, default: "#aaaaaa"
+      t.string :text_color_1, default: "#222222"
+      t.string :background_color_2, default: "#cccccc"
+      t.string :text_color_2, default: "#555555"
 
       t.timestamps null: false
     end

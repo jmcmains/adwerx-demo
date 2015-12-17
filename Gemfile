@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'bootstrap_colorpicker_rails'
+gem 'will_paginate-bootstrap'
 gem 'fog'
 
 # Use SCSS for stylesheets

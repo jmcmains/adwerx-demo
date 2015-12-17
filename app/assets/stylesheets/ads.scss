@@ -1,3 +1,16 @@
 // Place all the styles related to the ads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-colorpicker";
+
+.input-group-addon {
+    border:0 !important;
+    background:none !important;
+    padding-top:0 !important;
+    i {
+        height:34px !important;
+        width:100% !important;
+    }
+}

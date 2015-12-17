@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(version: 20151217121241) do
     t.string   "text_1"
     t.string   "text_2"
     t.integer  "design"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "background_color_1", default: "#aaaaaa"
+    t.string   "text_color_1",       default: "#222222"
+    t.string   "background_color_2", default: "#cccccc"
+    t.string   "text_color_2",       default: "#555555"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
 end

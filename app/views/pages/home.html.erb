@@ -1,10 +1,11 @@
 <h1>Ad Generator</h1>
 <div class="row">
-    <div id="form" class="col-xs-6">form</div>
-    <div id="preview" class="col-xs-6">preview</div>
+    <div id="form" class="col-xs-6"><%= render 'form' %></div>
+    <div id="preview" class="col-xs-6"><h2>Preview:</h2><span id="design"><%= render 'design_1', ad: @ad %></span></div>
 </div>
+<h2>Past Designs</h2>
 <div class="row">
-    <div class="col-xs-12">pagination</div>
-    <div class="col-xs-3">design</div>
-    <div class="col-xs-12">pagination</div>
+    <div class="col-xs-12"><%= will_paginate @ads, renderer: BootstrapPagination::Rails %></div>
+    <%= render @ads %>
+    <div class="col-xs-12"><%= will_paginate @ads, renderer: BootstrapPagination::Rails %></div>
 </div>
