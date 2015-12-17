@@ -1,31 +1,43 @@
 <h2>Enter Your Information:</h2>
 <%= form_for ad, html: { multipart: true, remote: true } do |f| %>
   <%= render 'pages/error_messages', object: f.object %>
+  <div class="form-group has-feedback">
+    <%= f.label :design %>
+    <%= f.select :design, [['Design 1', 1],['Design 2', 2]], {}, {class: "form-control"} %>
+  </div>
+  <div class= "row">
 
-  <div class="form-group">
+  <div class="form-group col-xs-6">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control", data: {target: ".name"} %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-xs-6">
     <%= f.label :company %>
     <%= f.text_field :company, class: "form-control", data: {target: ".company"} %>
   </div>
-  <div class="form-group">
+      
+  </div>
+  <div class= "row">
+  <div class="form-group col-xs-6">
     <%= f.label :phone_number %>
     <%= f.text_field :phone_number, class: "form-control", data: {target: ".phone-number"} %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-xs-6">
     <%= f.label :zipcode %>
     <%= f.text_field :zipcode, class: "form-control", data: {target: ".zipcode"} %>
   </div>
-  <div class= "form-group">
+  </div>
+  <div class="row">
+    <div class= "form-group col-xs-6">
     <%= f.label :profile_image %>
     <%= f.file_field :profile_image, data: {target: ".profile"} %>
   </div>
-  <div class= "form-group">
+  <div class= "form-group col-xs-6">
     <%= f.label :house_image %>
     <%= f.file_field :house_image, data: {target: ".house"} %>
   </div>
+  </div>
+  
   <div class="form-group">
     <%= f.label :text_1 %>
     <%= f.text_field :text_1, class: "form-control", data: {target: ".text_1"} %>
@@ -61,10 +73,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="form-group has-feedback">
-    <%= f.label :design %>
-    <%= f.select :design, [['Design 1', 1],['Design 2', 2]], {}, {class: "form-control"} %>
   </div>
   <%= f.submit ad.new_record? ? "Save Ad" : "Update Ad", class: "btn btn-primary" %>
 <% end %>

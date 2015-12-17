@@ -10,6 +10,7 @@ gem 'bootstrap_colorpicker_rails'
 gem 'will_paginate-bootstrap'
 gem 'fog'
 gem 'rails_12factor'
+gem 'zip-codes'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
