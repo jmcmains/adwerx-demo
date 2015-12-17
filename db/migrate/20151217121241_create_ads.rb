@@ -9,6 +9,7 @@ class CreateAds < ActiveRecord::Migration
       t.string :profile_image
       t.string :text_1
       t.string :text_2
+      t.integer :design
 
       t.timestamps null: false
     end
