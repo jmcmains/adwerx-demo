@@ -1,6 +1,6 @@
 <h2>Enter Your Information:</h2>
-<%= form_for @ad, html: { multipart: true } do |f| %>
-  <%= render 'error_messages', object: f.object %>
+<%= form_for ad, html: { multipart: true, remote: true } do |f| %>
+  <%= render 'pages/error_messages', object: f.object %>
 
   <div class="form-group">
     <%= f.label :name %>
@@ -66,7 +66,7 @@
     <%= f.label :design %>
     <%= f.select :design, [['Design 1', 1],['Design 2', 2]], {}, {class: "form-control"} %>
   </div>
-  <%= f.submit "Save Ad", class: "btn btn-primary" %>
+  <%= f.submit ad.new_record? ? "Save Ad" : "Update Ad", class: "btn btn-primary" %>
 <% end %>
 
 
@@ -81,9 +81,9 @@
         });
         $('#ad_design').change(function () {
           if ($(this).val() == 1) {
-            $('#design').html("<%=j render 'design_1', ad: @ad %>")
+            $('#design').html("<%=j render 'pages/design_1', ad: @ad %>")
           } else {
-            $('#design').html("<%=j render 'design_2', ad: @ad %>")
+            $('#design').html("<%=j render 'pages/design_2', ad: @ad %>")
           }
           $.each($('.form-group input[type="text"]'), function(key,value) { 
             $('#preview ' + $(value).data('target')).text($(value).val());
@@ -105,6 +105,9 @@
                     if ($('#preview ' + $(input).data('target')).parent().width() > $('#preview ' + $(input).data('target')).width()) {
                       $('#preview ' + $(input).data('target')).css('max-height','inherit')
                     }
+                    
+                    var imgClass = ($('#preview ' + $(input).data('target')).width()/$('#preview ' + $(input).data('target')).height() > $($('#preview ' + $(input).data('target'))).parent().width()/$($('#preview ' + $(input).data('target'))).parent().height()) ? 'wide' : 'tall';
+                    $($('#preview ' + $(input).data('target'))).addClass(imgClass);
                   }
                   
               }

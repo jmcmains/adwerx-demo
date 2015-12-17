@@ -1,11 +1,18 @@
+
 <h1>Ad Generator</h1>
 <div class="row">
-    <div id="form" class="col-xs-6"><%= render 'form' %></div>
-    <div id="preview" class="col-xs-6"><h2>Preview:</h2><span id="design"><%= render 'design_1', ad: @ad %></span></div>
+    <div id="form" class="col-xs-6"><%= render 'pages/form', ad: @ad %></div>
+    <div id="preview" class="col-xs-6"><%= render 'pages/preview' %></div>
 </div>
 <h2>Past Designs</h2>
-<div class="row">
-    <div class="col-xs-12"><%= will_paginate @ads, renderer: BootstrapPagination::Rails %></div>
-    <%= render @ads %>
-    <div class="col-xs-12"><%= will_paginate @ads, renderer: BootstrapPagination::Rails %></div>
+<div id="list" class="row">
+    <%= render "pages/list" %>
 </div>
+<script>
+    $(function(){
+     $('.fill').find('img').each(function(){
+      var imgClass = (this.width/this.height > $(this).parent().width()/$(this).parent().height()) ? 'wide' : 'tall';
+      $(this).addClass(imgClass);
+     })
+    })
+</script>

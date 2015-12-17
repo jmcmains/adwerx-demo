@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'pages#home'
   
-  resources :ads, only: [:create]
+  resources :ads, only: [:create,:edit,:update, :destroy] do 
+    get :update_page, on: :member
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

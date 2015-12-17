@@ -1,4 +1,4 @@
-<div style="float:left;margin:10px">
+<div style="float:left;margin:10px" id="ad_model-<%= ad.id %>">
     <%= render "pages/design_#{ad.design}", ad: ad %>
-    <p style="text-align:center"><%= link_to "Edit", "#" %> | <%= link_to "Delete", "#" %></p>
+    <p style="text-align:center"><%= link_to "Edit", edit_ad_path(ad), remote: true %> | <%= link_to 'Delete', ad_path(ad), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></p>
 </div>

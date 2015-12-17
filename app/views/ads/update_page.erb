@@ -1,0 +1,8 @@
+$('#form').html('<%=j render 'pages/form', ad: @ad %>')
+$('#preview').html('<%=j render "pages/preview" %>')
+$('#list').html('<%=j render "pages/list" %>')
+$('.fill').find('img').each(function(){
+    var imgClass = (this.width/this.height > $(this).parent().width()/$(this).parent().height()) ? 'wide' : 'tall';
+    $(this).addClass(imgClass);
+})
+window.scrollTo(0,0);

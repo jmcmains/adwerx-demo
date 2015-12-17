@@ -14,3 +14,13 @@
         width:100% !important;
     }
 }
+
+.fill {
+    background: #444;
+    img.wide {
+        height:100%;
+    }
+    img.tall {
+        width:100%;
+    }
+}

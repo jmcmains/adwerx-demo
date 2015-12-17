@@ -1,15 +1,16 @@
+
 <div style="width:300px;height:250px;background:black;color:white;padding:0;margin:0;position:relative;">
 <div class="section-1" style="width:100%;height:80px;background:<%= ad.background_color_1 %>;color:<%= ad.text_color_1 %>;text-align:center">
     <p class="name" style="font-size:21px"><%= ad.name %></p>
     <p class="text_1"><%= ad.text_1 %></p></div>
 <div style="width:100%;height:120px;text-align:center;position:relative">
-    <div class="profile-container" style="overflow:hidden;position:absolute;top:0;bottom:0;left:0;width:40%;background-color:red">
-        <%= image_tag ad.profile_image, class: "profile", style: "max-height: 100%;max-width:100%" %>
+    <div class="profile-container fill" style="overflow:hidden;position:relative;height:100%;width:40%">
+        <%= image_tag ad.profile_image, class: "profile" %>
     </div>
     <div class="section-2" style="position:absolute;top:0;bottom:0;left:40%;width:60%;background:<%= ad.background_color_2 %>;color:<%= ad.text_color_2 %>;">
         <span class="text_2"><%= ad.text_2 %></span>
         <div style="position:absolute;left:10px;right:10px;bottom:5px;border: 1px solid <%= ad.text_color_2 %>; border-radius:2px;height:20px">
-            <span class="phone_number"><%= ad.phone_number %></span>
+            <span class="phone-number"><%= ad.phone_number %></span>
         </div>
     </div>
 </div>
@@ -17,3 +18,4 @@
    <%= image_tag ad.house_image, class: "house", style: "max-height: 100%;float:left" %> <span class="company"><%= ad.company %></span> <br><span class="zipcode"><%= ad.zipcode %></span>
 </div>
 </div>
+
