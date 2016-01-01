@@ -11,6 +11,7 @@ gem 'will_paginate-bootstrap'
 gem 'fog'
 gem 'rails_12factor'
 gem 'zip-codes'
+gem 'maskedinput-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

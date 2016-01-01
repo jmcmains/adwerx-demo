@@ -1,133 +1,113 @@
 <h2>Enter Your Information:</h2>
-<%= form_for ad, html: { multipart: true, remote: true } do |f| %>
+<%= form_for ad, html: { multipart: true, remote: true, class: "form-horizontal" } do |f| %>
   <%= render 'pages/error_messages', object: f.object %>
-  <div class="form-group has-feedback">
-    <%= f.label :design %>
-    <%= f.select :design, [['Design 1', 1],['Design 2', 2]], {}, {class: "form-control"} %>
-  </div>
-  <div class= "row">
-
-  <div class="form-group col-xs-6">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control", data: {target: ".name"} %>
-  </div>
-  <div class="form-group col-xs-6">
-    <%= f.label :company %>
-    <%= f.text_field :company, class: "form-control", data: {target: ".company"} %>
-  </div>
-      
-  </div>
-  <div class= "row">
-  <div class="form-group col-xs-6">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, class: "form-control", data: {target: ".phone-number"} %>
-  </div>
-  <div class="form-group col-xs-6">
-    <%= f.label :zipcode %>
-    <%= f.text_field :zipcode, class: "form-control", data: {target: ".zipcode"} %>
-  </div>
-  </div>
-  <div class="row">
-    <div class= "form-group col-xs-6">
-    <%= f.label :profile_image %>
-    <%= f.file_field :profile_image, data: {target: ".profile"} %>
-  </div>
-  <div class= "form-group col-xs-6">
-    <%= f.label :house_image %>
-    <%= f.file_field :house_image, data: {target: ".house"} %>
-  </div>
-  </div>
-  
   <div class="form-group">
-    <%= f.label :text_1 %>
-    <%= f.text_field :text_1, class: "form-control", data: {target: ".text_1"} %>
-  </div>
-  <div class="form-group has-feedback">
-    <%= f.label :text_2 %>
-    <%= f.text_field :text_2, class: "form-control", data: {target: ".text_2"} %>
-  </div>
-  <div class="row">
-    <div class="col-xs-6">
-      <strong>Section 1</strong>
-      <div class="row">
-        <div class="col-xs-6 colorpicker-input" data-target-attribute="background-color" data-target-class="section-1">
-          <%= f.label :background_color_1, "Background" %>
-          <%= f.hidden_field :background_color_1, class: "form-control"%><span class="input-group-addon"><i></i></span>
-        </div>
-        <div class="col-xs-6 colorpicker-input" data-target-attribute="color" data-target-class="section-1">
-          <%= f.label :text_color_1, "Text" %>
-          <%= f.hidden_field :text_color_1, class: "form-control"%><span class="input-group-addon"><i></i></span>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <strong>Section 2</strong>
-      <div class="row">
-        <div class="col-xs-6 colorpicker-input" data-target-attribute="background-color" data-target-class="section-2">
-          <%= f.label :background_color_2, "Background" %>
-          <%= f.hidden_field :background_color_2, class: "form-control"%><span class="input-group-addon"><i></i></span>
-        </div>
-        <div class="col-xs-6 colorpicker-input" data-target-attribute="color" data-target-class="section-2">
-          <%= f.label :text_color_2, "Text" %>
-          <%= f.hidden_field :text_color_2, class: "form-control"%><span class="input-group-addon"><i></i></span>
-        </div>
-      </div>
+    <%= f.label :design, "Ad design", class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.select :design, [['Design 1', 1],['Design 2', 2]], {}, {class: "form-control"} %>
     </div>
   </div>
-  <%= f.submit ad.new_record? ? "Save Ad" : "Update Ad", class: "btn btn-primary" %>
+  <div class="form-group">
+    <%= f.label :name, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :name, class: "form-control", data: {target: ".name"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :company, class: "form-control", data: {target: ".company"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :phone_number, class: "form-control", data: {target: ".phone-number"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zipcode, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :zipcode, class: "form-control", data: {target: ".zipcode"} %>
+    </div>
+  </div>
+  <div class= "form-group">
+    <%= f.label :profile_image, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.file_field :profile_image, data: {target: ".profile"} %>
+    </div>
+  </div>
+  <div class= "form-group">
+    <%= f.label :house_image, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.file_field :house_image, data: {target: ".house"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :text_1, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :text_1, class: "form-control", data: {target: ".text_1"} %>
+    </div>
+  </div>
+  <div class="form-group" id="text_2_group">
+    <%= f.label :text_2, class: "control-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :text_2, class: "form-control", data: {target: ".text_2"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <strong class= "control-label col-sm-3">Section 1</strong>
+    <div class="col-sm-4 colorpicker-input" data-target-attribute="background-color" data-target-class="section-1">
+      <%= f.label :background_color_1, "Background" %>
+      <%= f.hidden_field :background_color_1, class: "form-control"%><span class="input-group-addon"><i></i></span>
+    </div>
+    <div class="col-sm-offset-1 col-xs-4 colorpicker-input" data-target-attribute="color" data-target-class="section-1">
+      <%= f.label :text_color_1, "Text" %>
+      <%= f.hidden_field :text_color_1, class: "form-control"%><span class="input-group-addon"><i></i></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <strong class= "control-label col-sm-3">Section 2</strong>
+    <div class="col-sm-4 colorpicker-input" data-target-attribute="background-color" data-target-class="section-2">
+      <%= f.label :background_color_2, "Background" %>
+      <%= f.hidden_field :background_color_2, class: "form-control"%><span class="input-group-addon"><i></i></span>
+    </div>
+    <div class="col-sm-offset-1 col-sm-4 colorpicker-input" data-target-attribute="color" data-target-class="section-2">
+      <%= f.label :text_color_2, "Text" %>
+      <%= f.hidden_field :text_color_2, class: "form-control"%><span class="input-group-addon"><i></i></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-10">
+      <%= f.submit ad.new_record? ? "Save Ad" : "Update Ad", class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
 
 
 <script>
-    $(function(){
-        $('.colorpicker-input').colorpicker().on('changeColor.colorpicker', function(event){
-          $('#preview .' + $(this).data("target-class")).css($(this).data("target-attribute"),event.color.toHex());
-        });
-        $('.form-group input[type="text"]').keyup(function( event ) {
-          $('#preview ' + $(this).data('target')).text($(this).val());
-          
-        });
-        $('#ad_design').change(function () {
-          if ($(this).val() == 1) {
-            $('#design').html("<%=j render 'pages/design_1', ad: @ad %>")
-          } else {
-            $('#design').html("<%=j render 'pages/design_2', ad: @ad %>")
-          }
-          $.each($('.form-group input[type="text"]'), function(key,value) { 
-            $('#preview ' + $(value).data('target')).text($(value).val());
-          })
-          $.each($('.colorpicker-input'), function(key,value) { 
-            $('#preview .' + $(value).data("target-class")).css($(value).data("target-attribute"),$(value).find('.form-control').val());
-          })
-          $.each($("input[type='file']"), function(key,value) { 
-            readURL(value);
-          })
-        });
-        function readURL(input) {
-          if (input.files && input.files[0]) {
-              var reader = new FileReader();
-              
-              reader.onload = function (e) {
-                  $('#preview ' + $(input).data('target')).attr('src', e.target.result);
-                  if ($(input).data('target') == ".profile") {
-                    if ($('#preview ' + $(input).data('target')).parent().width() > $('#preview ' + $(input).data('target')).width()) {
-                      $('#preview ' + $(input).data('target')).css('max-height','inherit')
-                    }
-                    
-                    var imgClass = ($('#preview ' + $(input).data('target')).width()/$('#preview ' + $(input).data('target')).height() > $($('#preview ' + $(input).data('target'))).parent().width()/$($('#preview ' + $(input).data('target'))).parent().height()) ? 'wide' : 'tall';
-                    $($('#preview ' + $(input).data('target'))).addClass(imgClass);
-                  }
-                  
-              }
-              
-              reader.readAsDataURL(input.files[0]);
-          }
-        }
-    
-        $("input[type='file']").change(function(){
-            readURL(this);
-        });
-    });
+$(function(){
+  $('#text_2_group').hide()
+  $('#ad_design').change(function () {
+    if ($(this).val() == 1) {
+      $('#design').html("<%=j render 'pages/design_1', ad: @ad %>")
+      $('#text_2_group').hide()
+    } else {
+      $('#design').html("<%=j render 'pages/design_2', ad: @ad %>")
+      $('#text_2_group').show()
+    }
+    $.each($('.form-group input[type="text"]'), function(key,value) { 
+      $('#preview ' + $(value).data('target')).text($(value).val());
+    })
+    $.each($('.colorpicker-input'), function(key,value) { 
+      $('#preview .' + $(value).data("target-class")).css($(value).data("target-attribute"),$(value).find('.form-control').val());
+    })
+    $.each($("input[type='file']"), function(key,value) { 
+      window.readURL(value);
+    })
+    window.pageReady()
+  });
+});
 </script>
 
 
