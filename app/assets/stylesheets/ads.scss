@@ -162,9 +162,9 @@
 
 .affix-background {
     right:0;
-    top:calc(50% - 140px);
+    top:calc(50% - 125px);
     width:140px;
-    height:280px;
+    height:250px;
     cursor:pointer;
     background:#aaa;
     opacity:0.5;
@@ -177,7 +177,7 @@
 }
 .affix-foreground {
     right:0;
-    top:calc(50% - 140px);
+    top:calc(50% - 125px);
     width:140px;
     cursor:pointer;
     z-index:1001;
@@ -200,4 +200,10 @@
             font-weight:bold;
         }
     }
+}
+
+@media (max-width: $screen-sm-min) { 
+    .affix-background {display:none;}
+    .affix-foreground {display:none;}
+    
 }
