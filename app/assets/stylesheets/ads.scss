@@ -159,3 +159,41 @@
         @extend .form-control;
     }
 }
+
+.affix-background {
+    right:0;
+    top:calc(50% - 120px);
+    width:140px;
+    height:240px;
+    background:#aaa;
+    opacity:0.5;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    border-right:none;
+    box-shadow:0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.affix-foreground {
+    right:0;
+    top:calc(50% - 120px);
+    width:140px;
+    cursor:pointer;
+    #helpimg {
+        @extend .img-circle;
+        border:1px solid rgba(0, 0, 0, 0.2);
+        height: 100px;
+        display:block;
+        margin:20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    .popover {
+        display:block;
+        top:120px;
+        margin-left:20px;
+        text-align:center;
+        .popover-title {
+            
+            font-weight:bold;
+        }
+    }
+}

@@ -1,8 +1,7 @@
-<div class="affix" style="right:0;top:calc(50% - 120px);width:140px;height:240px;background:#aaa;opacity:.5;border-top-left-radius:5px;border-bottom-left-radius:5px;border:1px solid;border-right:none">&nbsp;</div>
-<div class="affix" style="right:0;top:calc(50% - 120px);width:140px;cursor:pointer">
-  <%= image_tag "help_pic.jpg", class: "img-circle", style: "height: 100px;display:block;margin:20px;" %>
-  <div class="clearfix"></div>
-  <div class="popover bottom" style="display:block;top:120px;margin-left:20px">
+<div class="affix-background affix"></div>
+<div class="affix-foreground affix">
+  <%= image_tag "help_pic.jpg", id: "helpimg" %>
+  <div class="popover bottom">
       <div class="arrow"></div>
       <h3 class="popover-title">Need help?</h3>
       <div class="popover-content"> <p>Email Support!</p> 
