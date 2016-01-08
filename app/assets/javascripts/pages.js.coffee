@@ -42,7 +42,12 @@ window.pageReady = ->
     window.setSize($(this))
   $("input[type='file']").change ->
     window.readURL(this);
-    
+  $(".affix").on "mouseover", ->
+    $(".affix").css("width","160px");
+  $(".affix").on "mouseout", ->
+    $(".affix").css("width","140px");
+  $(".affix").click ->
+    $("#myModal").modal("show");
 
 $(document).ready(window.pageReady)
 $(document).on('page:load', window.pageReady)

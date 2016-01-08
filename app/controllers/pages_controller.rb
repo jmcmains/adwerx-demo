@@ -12,4 +12,16 @@ class PagesController < ApplicationController
     @ads = Ad.order('created_at desc').paginate(:page => params[:page], per_page: 10)
   end
   
+  def email_form
+    @name = params[:name]
+    @email = params[:email]
+    @question = params[:question]
+    HelpMailer.help_form(@name,@email,@question).deliver_now
+    flash[:info] = "Please check your email to activate your account."
+    respond_to do |format|
+      format.html {redirect_to root_url}
+      format.js
+    end
+  end
+  
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  
+  post 'email_form' => 'pages#email_form'
   resources :ads, only: [:create,:edit,:update, :destroy] do 
     get :update_page, on: :member
   end

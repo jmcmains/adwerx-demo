@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-colorpicker
+//= require bootstrap
 //= require maskedinput
 //= require_tree .

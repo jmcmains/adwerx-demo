@@ -87,7 +87,11 @@
 
 <script>
 $(function(){
-  $('#text_2_group').hide()
+  if ($('#ad_design').val() == 1) {
+    $('#text_2_group').hide()
+  } else {
+    $('#text_2_group').show()
+  }
   $('#ad_design').change(function () {
     if ($(this).val() == 1) {
       $('#design').html("<%=j render 'pages/design_1', ad: @ad %>")
